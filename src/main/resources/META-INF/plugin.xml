@@ -1,0 +1,63 @@
+<idea-plugin>
+    <id>miroshka.allayideplugin</id>
+    <name>Allay Gradle Support</name>
+    <vendor url="https://github.com/AllayMC/AllayGradle">AllayMC</vendor>
+
+    <description><![CDATA[
+    IntelliJ IDEA plugin that provides support for Allay Gradle Plugin development.
+    
+    Features:
+    <ul>
+        <li>Kotlin DSL support for allay {} configuration block</li>
+        <li>Code completion for Allay plugin configuration</li>
+        <li>Validation and inspections for plugin descriptors</li>
+        <li>Quick documentation for Allay API</li>
+    </ul>
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <h3>0.1.0-alpha</h3>
+    <ul>
+        <li>Initial release</li>
+        <li>Basic Kotlin DSL support for allay {} block</li>
+        <li>Code completion for configuration properties</li>
+    </ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.java</depends>
+    <depends>com.intellij.gradle</depends>
+    <depends>Git4Idea</depends>
+
+    <extensions defaultExtensionNs="org.jetbrains.kotlin">
+        <supportsKotlinPluginMode supportsK2="true"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <completion.contributor 
+            language="kotlin" 
+            implementationClass="miroshka.allayideplugin.AllayDslCompletionContributor"/>
+        
+        <psi.referenceContributor 
+            language="kotlin" 
+            implementation="miroshka.allayideplugin.AllayReferenceContributor"/>
+        
+        <annotator 
+            language="kotlin" 
+            implementationClass="miroshka.allayideplugin.AllayDslAnnotator"/>
+        
+        <newProjectWizard.generator 
+            implementation="miroshka.allayideplugin.project.AllayGeneratorNewProjectWizard"/>
+        
+        <postStartupActivity 
+            implementation="miroshka.allayideplugin.version.AllayVersionCheckStartupActivity"/>
+        
+        <notificationGroup 
+            id="Allay Version Checker" 
+            displayType="BALLOON"/>
+    </extensions>
+
+    <actions>
+    </actions>
+</idea-plugin>
