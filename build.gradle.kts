@@ -31,12 +31,21 @@ dependencies {
 
 intellijPlatform {
     pluginConfiguration {
+        version = project.version.toString()
+        
         ideaVersion {
             sinceBuild = "251"
         }
 
         changeNotes = """
-            Initial version
+            <h3>${project.version}</h3>
+            <ul>
+                <li>Initial release</li>
+                <li>Basic Kotlin DSL support for allay {} block</li>
+                <li>Code completion for configuration properties</li>
+                <li>Project wizard for creating Allay plugins</li>
+                <li>Automatic version checking for Allay API updates</li>
+            </ul>
         """.trimIndent()
     }
 }
