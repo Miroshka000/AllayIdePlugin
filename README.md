@@ -9,6 +9,21 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/Miroshka/AllayIdePlugin/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+  </a>
+  <a href="https://github.com/Miroshka/AllayIdePlugin/releases">
+    <img src="https://img.shields.io/github/v/release/Miroshka/AllayIdePlugin?include_prereleases" alt="Release">
+  </a>
+  <a href="https://plugins.jetbrains.com/plugin/28846-allay-gradle-support">
+    <img src="https://img.shields.io/jetbrains/plugin/v/28846-allay-gradle-support.svg" alt="JetBrains Marketplace">
+  </a>
+  <a href="https://plugins.jetbrains.com/plugin/28846-allay-gradle-support">
+    <img src="https://img.shields.io/jetbrains/plugin/d/28846-allay-gradle-support.svg" alt="Downloads">
+  </a>
+</p>
+
+<p align="center">
   <a href="#features">Features</a> •
   <a href="#installation">Installation</a> •
   <a href="#usage">Usage</a> •
@@ -36,6 +51,22 @@
 
 ## Installation
 
+### From JetBrains Marketplace (Recommended)
+
+<p align="center">
+  <a href="https://plugins.jetbrains.com/plugin/28846-allay-gradle-support">
+    <img src="https://img.shields.io/badge/Install-IntelliJ%20Plugin-blue?style=for-the-badge&logo=intellij-idea" alt="Install Plugin">
+  </a>
+</p>
+
+1. Open IntelliJ IDEA
+2. Go to `Settings/Preferences` → `Plugins` → `Marketplace`
+3. Search for "Allay Gradle Support"
+4. Click `Install`
+5. Restart IntelliJ IDEA
+
+Or install directly from [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/28846-allay-gradle-support)
+
 ### From Source
 
 1. Clone the repository:
@@ -54,9 +85,6 @@ cd AllayIdePlugin
    - Go to `Settings/Preferences` → `Plugins` → `⚙️` → `Install Plugin from Disk...`
    - Select the generated JAR file from `build/libs/`
 
-### From JetBrains Marketplace
-
-Coming soon.
 
 ## Usage
 
@@ -65,17 +93,27 @@ Coming soon.
 1. Open IntelliJ IDEA
 2. Select `File` → `New` → `Project`
 3. Choose `Allay Plugin` from the generators list
-4. Configure your project:
+4. Configure your project settings on a single screen:
    - **Name**: Your plugin name
    - **Location**: Project directory
+   - **Create Git repository**: Enable/disable Git initialization
    - **JDK**: Select or download JDK 21
    - **Group ID**: Java package name (e.g., `com.example`)
+   - **Plugin Name**: Display name for your plugin
    - **Plugin Version**: Initial version (e.g., `1.0.0`)
    - **Plugin Description**: Brief description of your plugin
    - **Author**: Your name
    - **Allay API Version**: Target Allay API version
    - **Main Class Name**: Entry point class name
 5. Click `Create`
+
+The wizard will automatically generate:
+- Complete project structure with `src/main/java`
+- `build.gradle.kts` with Allay Gradle Plugin configured
+- `settings.gradle.kts`
+- Main plugin class extending `org.allaymc.api.plugin.Plugin`
+- Gradle wrapper scripts
+- `.gitignore` file (if Git is enabled)
 
 ### Working with Allay DSL
 
@@ -101,12 +139,46 @@ allay {
 
 The plugin automatically checks for new Allay API versions on project startup and notifies you when updates are available.
 
+## Quick Start Example
+
+After creating a project, your main class will look like this:
+
+```java
+package com.example;
+
+import org.allaymc.api.plugin.Plugin;
+
+public class MyPlugin extends Plugin {
+    @Override
+    public void onLoad() {
+        getLogger().info("MyPlugin is loading...");
+    }
+    
+    @Override
+    public void onEnable() {
+        getLogger().info("MyPlugin has been enabled!");
+    }
+    
+    @Override
+    public void onDisable() {
+        getLogger().info("MyPlugin has been disabled!");
+    }
+}
+```
+
+Build and run:
+```bash
+./gradlew build
+```
+
+The compiled plugin JAR will be in `build/libs/`.
+
 ## Development
 
 ### Requirements
 
 - IntelliJ IDEA 2025.1.4.1 or later
-- JDK 21
+- JDK 21 (GraalVM recommended for better performance)
 - Gradle 8.9 or later
 
 ### Project Structure
@@ -167,6 +239,21 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## Troubleshooting
+
+### Plugin not appearing in New Project wizard
+- Make sure you're using IntelliJ IDEA 2025.1.4.1 or later
+- Try invalidating caches: `File` → `Invalidate Caches` → `Invalidate and Restart`
+
+### JDK not found
+- **Recommended**: Install [GraalVM JDK 21](https://www.graalvm.org/downloads/) for optimal performance
+- Alternative: Use IntelliJ's built-in JDK downloader or [Adoptium](https://adoptium.net/)
+- Configure it in `File` → `Project Structure` → `SDKs`
+
+### Gradle build fails
+- Make sure the Allay Gradle Plugin version is correct
+- Check that `gradlePluginPortal()` is in your `settings.gradle.kts`
 
 ## Related Projects
 
