@@ -15,11 +15,11 @@
   <a href="https://github.com/Miroshka/AllayIdePlugin/releases">
     <img src="https://img.shields.io/github/v/release/Miroshka/AllayIdePlugin?include_prereleases" alt="Release">
   </a>
-  <a href="https://plugins.jetbrains.com/plugin/28846-allay-gradle-support">
-    <img src="https://img.shields.io/jetbrains/plugin/v/28846-allay-gradle-support.svg" alt="JetBrains Marketplace">
+  <a href="https://plugins.jetbrains.com/plugin/28846">
+    <img src="https://img.shields.io/jetbrains/plugin/v/28846.svg" alt="JetBrains Marketplace">
   </a>
-  <a href="https://plugins.jetbrains.com/plugin/28846-allay-gradle-support">
-    <img src="https://img.shields.io/jetbrains/plugin/d/28846-allay-gradle-support.svg" alt="Downloads">
+  <a href="https://plugins.jetbrains.com/plugin/28846">
+    <img src="https://img.shields.io/jetbrains/plugin/d/28846.svg" alt="Downloads">
   </a>
 </p>
 
@@ -54,18 +54,18 @@
 ### From JetBrains Marketplace (Recommended)
 
 <p align="center">
-  <a href="https://plugins.jetbrains.com/plugin/28846-allay-gradle-support">
+  <a href="https://plugins.jetbrains.com/plugin/28846">
     <img src="https://img.shields.io/badge/Install-IntelliJ%20Plugin-blue?style=for-the-badge&logo=intellij-idea" alt="Install Plugin">
   </a>
 </p>
 
 1. Open IntelliJ IDEA
 2. Go to `Settings/Preferences` → `Plugins` → `Marketplace`
-3. Search for "Allay Gradle Support"
+3. Search for "Allay IDE Plugin"
 4. Click `Install`
 5. Restart IntelliJ IDEA
 
-Or install directly from [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/28846-allay-gradle-support)
+Or install directly from [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/28846)
 
 ### From Source
 

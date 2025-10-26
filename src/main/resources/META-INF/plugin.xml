@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>miroshka.allayideplugin</id>
-    <name>Allay Gradle Support</name>
-    <vendor url="https://github.com/AllayMC/AllayGradle">AllayMC</vendor>
+    <name>Allay IDE Plugin</name>
+    <vendor url="https://github.com/Miroshka/AllayIdePlugin">Miroshka</vendor>
 
     <description><![CDATA[
     IntelliJ IDEA plugin that provides support for Allay Gradle Plugin development.
