@@ -15,10 +15,10 @@
   <a href="https://github.com/Miroshka/AllayIdePlugin/releases">
     <img src="https://img.shields.io/github/v/release/Miroshka/AllayIdePlugin?include_prereleases" alt="Release">
   </a>
-  <a href="https://plugins.jetbrains.com/plugin/28846-allay-gradle-support">
+  <a href="https://plugins.jetbrains.com/plugin/28848-allay-ide-support">
     <img src="https://img.shields.io/jetbrains/plugin/v/28846.svg" alt="JetBrains Marketplace">
   </a>
-  <a href="https://plugins.jetbrains.com/plugin/28846-allay-gradle-support">
+  <a href="https://plugins.jetbrains.com/plugin/28848-allay-ide-support">
     <img src="https://img.shields.io/jetbrains/plugin/d/28846.svg" alt="Downloads">
   </a>
 </p>
@@ -54,7 +54,7 @@
 ### From JetBrains Marketplace (Recommended)
 
 <p align="center">
-  <a href="https://plugins.jetbrains.com/plugin/28846-allay-gradle-support">
+  <a href="https://plugins.jetbrains.com/plugin/28848-allay-ide-supportt">
     <img src="https://img.shields.io/badge/Install-IntelliJ%20Plugin-blue?style=for-the-badge&logo=intellij-idea" alt="Install Plugin">
   </a>
 </p>
@@ -65,7 +65,7 @@
 4. Click `Install`
 5. Restart IntelliJ IDEA
 
-Or install directly from [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/28846-allay-gradle-support)
+Or install directly from [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/28848-allay-ide-support)
 
 ### From Source
 
